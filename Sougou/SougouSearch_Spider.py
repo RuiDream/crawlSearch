@@ -4,7 +4,7 @@ import bs4
 import csv
 
 '''
-爬虫提取百度搜索结果
+爬虫提取搜狗搜索结果
 链接  标题  摘要
 author:starDream
 '''
@@ -23,18 +23,17 @@ class Get_Precise_Results():
             'accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
             'cache-control': "no-cache",
             'connection': "keep-alive",
-            'cookie': "BAIDUID=3C1596F737DB99AD5308E572C26B494E:FG=1; BIDUPSID=3C1596F737DB99AD5308E572C26B494E; PSTM=1530624508; BDUSS=HVRNjBSRm1SVFcwTW9TT0NZQUE2Nkl5MWhOOWozTEJ0Y3JwRWkzVTRPUlNhZUZjRVFBQUFBJCQAAAAAAAAAAAEAAABGh5ASw87RvbfJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFLcuVxS3Llcd; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; BDSFRCVID=fb-OJeC62wme2979TKySugbP-jUg5v7TH6aok6PAgEX5-VBwdiV_EG0PHf8g0KubFpPcogKKLgOTHULF_2uxOjjg8UtVJeC6EG0P3J; H_BDCLCKID_SF=tJuOVC8htD-3fP36q45Hh4_Oqxby2C62aJ3BbMJvWJ5TMCoj5Pkh0fR-bb_OKJQMKH4L0lvgtCQGShPC-tPM2l4w5xPLhxDjM6COapb13l02V-jEe-t2ynLVX-cyhtRMW23r0h7mWU5dsxA45J7cM4IseboJLfT-0bc4KKJxthF0hC0lj5KajTOMKUnh-I6yaDJ0WJ5ea-3_KRrN55RxbnLgyxom2xkqQjvybqFXy4TVKt5T-l0VbfPUDMJ9LUvQaTc4BUJ_WxbrMfoj5hjkbfJBQttjQn3hfIkja-5t3fbmVR7TyU42bU47yaji0q4Hb6b9BJcjfU5MSlcNLTjpQT8rDPCEJj-DJR4eoKPQ24-_ePTl-4of5DCShUFsKtDLB2Q-5KL-bb6qhCI6eqOv2qt0bU5Te4TP5bTq_MbdJJjojIQMLtJpW5QD345fKPcpX2TxoUJd5DnJhhvG-xj20-tebPRiWPb9QgbP2pQ7tt5W8ncFbT7l5hKpbt-q0x-jLn7ZVJO-KKCahDKCjMK; delPer=0; H_PS_PSSID=1420_21112_19897_29064_28518_29099_28724_28963_28839_28584_26350; PSINO=2;",
-}
+            'cookie': "SUV=005B271C1B10D4475B781522D1378441; CXID=458AFFA5417868A0DC18D13411894EF6; SUID=6EA3AE3B3865860A5B7A1A2600012810; wuid=AAERQ9x8IgAAAAqGCmIdCQYAIAY=; IPLOC=CN4201; pgv_pvi=4223668224; usid=8E4A14DE5037990A000000005C121099; SNUID=1E336CA9787DFE8966BD2AF17893EDBE; ad=VK4xxkllll2tLRO9lllllV8H4$9lllllTPSaBkllllwlllll4llll5@@@@@@@@@@; pgv_si=s7030352896; sct=18; ld=Ukllllllll2tESTDlllllV8HEUGlllllTPSaBkllllDlllll4ylll5@@@@@@@@@@"}
 	# 外部运行
 	def run(self):
 		results_dic = {}
 		for i in range(self.page_num):
 			#获得一个页面的标题，摘要和链接
-			temp1 = self._get_one_page_result1(i)
+			temp1,len_result = self._get_one_page_result1(i)
 			#获得每一个页面的body中的内容
-			temp2 = self._get_the_page_body(temp1)
+			temp2 = self._get_the_page_body(temp1,len_result)
 			#将一个页面中的标题，摘要，链接和body中的内容写进csv文件中
-			self._write_to_csv(temp2,self.key_word)
+			self._write_to_csv(temp2,self.key_word,len_result)
 
 		return results_dic
 
@@ -52,10 +51,10 @@ class Get_Precise_Results():
 	def _get_one_page_result1(self, page):
 		print('[INFO]:Getting Page %s...' % page)
 		#负责存放一页中的链接，标题，摘要和body信息
-		links_temp = ["None" for x in range(40)]
-		self.url = "https://www.baidu.com/s"
-		pn = page *10
-		querystring = {"wd": key_word, "pn": pn}
+		links_temp = ["None" for x in range(100)]
+		self.url = "https://www.sogou.com/web?"
+		pn = page+1
+		querystring = {"query": key_word, "page": pn}
 		#请求百度网页
 		response = requests.request("GET", self.url, headers=self.headers, params=querystring)
 		#获取到HTML
@@ -63,34 +62,38 @@ class Get_Precise_Results():
 		#使用bs4进行解析
 		soup = bs4.BeautifulSoup(html_content, 'lxml',from_encoding='utf-8')
 		#获取页面左边部分
-		left_content = soup.find('div', attrs={'id': 'content_left'})
-		#定义一个全局的网页中每个搜索结果的列表
-		global result_url_list
-		for i in range(1,11):
+		left_content = soup.find('div', attrs={'class': 'main'})
+		left_content = left_content.find('div',attrs = {'class':'results'})
+		# 寻找到去除广告的每个单独的搜索结果
+		result_url_list = left_content.find_all('div', attrs={'class': 'vrwrap'})
+		lenResult_url = len(result_url_list)
+		for i in range(lenResult_url):
 			try:
-				#寻找到去除广告的每个单独的搜索结果
-				result_url_list = left_content.find('div',id = str(pn+i))
-				#寻找到标题下所对应的URL地址
-				tempUrl = self.redirect(result_url_list.find('h3').find('a').get('href'))
+				tempUrl = result_url_list[i].find('h3').find('a').get('href')
+				if tempUrl.startswith('http') ==False:
+					#寻找到标题下所对应的URL地址
+					tempUrl = "https://www.sogou.com"+tempUrl
+				tempUrl = self.redirect(tempUrl)
+
 				#寻找到h3标签中存放的文字，一般即为标题
-				tempTitle = result_url_list.find('h3').find('a').get_text()
+				tempTitle = result_url_list[i].find('h3').find('a').get_text().strip()
 				#寻找到摘要信息
-				tempAbstract = result_url_list.find('div').get_text().replace(" ","").replace("\n","").replace("\t","").strip()
+				tempAbstract = result_url_list[i].find('div').get_text().replace(" ","").replace("\n","").replace("\t","").strip()
 				links_temp[(i-1)*4+0] = tempUrl
 				links_temp[(i-1)*4+1] = tempTitle
 				links_temp[(i-1)*4+2] = tempAbstract
 			except IndexError:
+				print("IndexError")
 				pass
 			except Exception as e:
 				print(e)
 				#如果遇到问题，则将对应的网址置为None，便于后边解析的时候进行判断，否则会出现问题
 				links_temp[(i - 1) * 4 + 0] = "None"
 				continue
-		return links_temp
-
+		return links_temp,lenResult_url
 
 #获取每个标题下的body信息
-	def _get_the_page_body(self,link):
+	def _get_the_page_body(self,link,len_result):
 		for i in range(10):
 			self.url2 = link[i*4]
 			if self.url2 != "None":
@@ -99,26 +102,27 @@ class Get_Precise_Results():
 				html_content = response.content
 				soup = bs4.BeautifulSoup(html_content, 'lxml', from_encoding='utf-8')
 				# 获取页面body部分
-				body_content = soup.find('body').get_text().replace(" ","").replace("\n","").replace("\t","").strip()
+				#body_content = soup.find('body').get_text().replace(" ","").replace("\n","").replace("\t","").strip()
+				body_content = "None"
 				link[i*4+3] = body_content
 			else:
 				link[i * 4 + 3] = self.url2
 		return link
 #将读取到的页面信息存到csv文件中
-	def _write_to_csv(self,content,file_name):
+	def _write_to_csv(self,content,file_name,len_result):
 		#以文件的名字进行命名
 		path = file_name+".csv"
 		print('[INFO]:Start to save data...')
 		with open(path,'a+',encoding='utf-8',newline = "") as f:
 			writeContent = csv.writer(f)
-			for i in range(10):
-				if content[i * 4] != "None":
+			for i in range(len_result):
+				if content[i*4]!="None":
 					writeContent.writerow(content[i*4:i*4+3])
 		f.close()
 
 # 内部调试
 if __name__ == '__main__':
 	key_word = input('Enter the key word:')
-	page_num = 2
+	page_num = 3
 	results = Get_Precise_Results(key_word, page_num).run()
 	print('All things Done...')
