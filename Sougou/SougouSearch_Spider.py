@@ -2,6 +2,7 @@
 import requests
 import bs4
 import csv
+import re
 
 '''
 爬虫提取搜狗搜索结果
@@ -15,6 +16,8 @@ class Get_Precise_Results():
 	def __init__(self, key_word, page_num=10):
 		self.key_word = key_word
 		self.page_num = page_num
+		self.count = 0
+		self.globalCount = 0
 		self.headers = {'pragma': "no-cache",
             'accept-encoding': "gzip, deflate, br",
             'accept-language': "zh-CN,zh;q=0.8",
@@ -27,14 +30,20 @@ class Get_Precise_Results():
 	# 外部运行
 	def run(self):
 		results_dic = {}
+		path = self.key_word + ".csv"
+		with open(path, 'a+', encoding='utf-8-sig', newline="") as f:
+			writeContent = csv.writer(f)
+			writeContent.writerow(["link","title","abstract","body"])
 		for i in range(self.page_num):
 			#获得一个页面的标题，摘要和链接
 			temp1,len_result = self._get_one_page_result1(i)
 			#获得每一个页面的body中的内容
 			temp2 = self._get_the_page_body(temp1,len_result)
 			#将一个页面中的标题，摘要，链接和body中的内容写进csv文件中
-			self._write_to_csv(temp2,self.key_word,len_result)
-
+			tmp= self._write_to_csv(temp2,self.key_word,len_result)
+			self.count +=tmp
+			if self.count >=20:
+				break
 		return results_dic
 
 	#将长网址转化为短网址，如果遇到异常，将网址置为None
@@ -73,56 +82,85 @@ class Get_Precise_Results():
 				if tempUrl.startswith('http') ==False:
 					#寻找到标题下所对应的URL地址
 					tempUrl = "https://www.sogou.com"+tempUrl
-				tempUrl = self.redirect(tempUrl)
+					tempUrl = self.getUrl(tempUrl)
+				#tempUrl = self.redirect(tempUrl)
 
 				#寻找到h3标签中存放的文字，一般即为标题
 				tempTitle = result_url_list[i].find('h3').find('a').get_text().strip()
 				#寻找到摘要信息
 				tempAbstract = result_url_list[i].find('div').get_text().replace(" ","").replace("\n","").replace("\t","").strip()
-				links_temp[(i-1)*4+0] = tempUrl
-				links_temp[(i-1)*4+1] = tempTitle
-				links_temp[(i-1)*4+2] = tempAbstract
+				links_temp[i*4+0] = tempUrl
+				links_temp[i*4+1] = tempTitle
+				links_temp[i*4+2] = tempAbstract
 			except IndexError:
 				print("IndexError")
-				pass
+				links_temp[i * 4 + 0] = "None"
+				continue
 			except Exception as e:
 				print(e)
 				#如果遇到问题，则将对应的网址置为None，便于后边解析的时候进行判断，否则会出现问题
-				links_temp[(i - 1) * 4 + 0] = "None"
+				links_temp[i * 4 + 0] = "None"
 				continue
 		return links_temp,lenResult_url
 
 #获取每个标题下的body信息
 	def _get_the_page_body(self,link,len_result):
-		for i in range(10):
-			self.url2 = link[i*4]
-			if self.url2 != "None":
-				#同上
-				response = requests.request("GET", self.url2, headers=self.headers)
-				html_content = response.content
-				soup = bs4.BeautifulSoup(html_content, 'lxml', from_encoding='utf-8')
-				# 获取页面body部分
-				#body_content = soup.find('body').get_text().replace(" ","").replace("\n","").replace("\t","").strip()
-				body_content = "None"
-				link[i*4+3] = body_content
+		for i in range(len_result):
+			if link[i*4] !="None":
+				try:
+					html = requests.get(link[i*4], timeout=30).text
+					soup = bs4.BeautifulSoup(html, 'html.parser')
+					# title = soup.select('div.mbtitle')
+					paras_tmp = soup.select('p')
+					paras = paras_tmp[3:]
+					text = ""
+					for t in paras:
+						if len(t) > 0:
+							text += t.get_text() + "\n\n"
+					link[i * 4 + 3] = text
+				except Exception as e:
+					print(e)
+					link[i * 4 + 3] = "None"
+					continue
 			else:
-				link[i * 4 + 3] = self.url2
+				link[i * 4 + 3] = "None"
+			#print(link[i*4:i*4+4])
 		return link
+
 #将读取到的页面信息存到csv文件中
 	def _write_to_csv(self,content,file_name,len_result):
 		#以文件的名字进行命名
 		path = file_name+".csv"
 		print('[INFO]:Start to save data...')
-		with open(path,'a+',encoding='utf-8',newline = "") as f:
+		temp = 0
+		with open(path,'a+',encoding='utf-8-sig',newline = "") as f:
 			writeContent = csv.writer(f)
 			for i in range(len_result):
 				if content[i*4]!="None":
-					writeContent.writerow(content[i*4:i*4+3])
+					writeContent.writerow(content[i*4:i*4+4])
+					temp +=1
+					self.globalCount +=1
+				if self.globalCount == 21:
+						break
 		f.close()
+		return temp
+
+	def getUrl(self,url):
+		s = requests.session()
+		tmpPage = s.get(url)
+		detailurl = ""
+		try:
+			# 得到真实页 真实网站地址
+			detailurl = re.search(r'URL=\'(.*?)\'', tmpPage.content.decode('utf-8'), re.S)
+			# httpurl = re.match(r"http://.*?/",detailurl.group(1)).group(0)  # 链接主页网址
+		except Exception as e:
+			print(e)
+			return "None"
+		return detailurl.group(1)
 
 # 内部调试
 if __name__ == '__main__':
 	key_word = input('Enter the key word:')
-	page_num = 3
+	page_num = 10
 	results = Get_Precise_Results(key_word, page_num).run()
 	print('All things Done...')
