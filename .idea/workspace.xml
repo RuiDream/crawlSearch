@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6acaf374-91f7-44e7-99d0-06ee1311b49c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Baobaoshu/Baobaoshu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lamabang/Lamabang.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Baidu/BaiduSearch_Spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Baidu/BaiduSearch_Spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sougou/SougouSearch_Spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sougou/SougouSearch_Spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sougou/原木纯品.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,65 +17,73 @@
     <session id="-489951183">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="49" />
-          <entry key="py" value="21" />
-          <entry key="txt" value="26" />
+          <entry key="csv" value="67" />
+          <entry key="py" value="40" />
+          <entry key="txt" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Python" value="21" />
+          <entry key="PLAIN_TEXT" value="94" />
+          <entry key="Python" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="csv" value="1" />
-          <entry key="py" value="5042" />
+          <entry key="py" value="9550" />
           <entry key="txt" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="5042" />
+          <entry key="Python" value="9550" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sougou/SougouSearch_Spider.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lamabang/Lamabang.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="69" />
+            <state relative-caret-position="-65">
+              <caret line="85" column="23" lean-forward="true" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
               <folding>
                 <element signature="e#21#36#0" expanded="true" />
+                <marker date="1560683864644" expanded="true" signature="1158:2093" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Baidu/BaiduSearch_Spider.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Baobaoshu/Baobaoshu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            <state relative-caret-position="208">
+              <caret line="162" column="4" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
               <folding>
                 <element signature="e#21#36#0" expanded="true" />
+                <marker date="1560684451502" expanded="true" signature="1654:4971" ph="..." />
+                <marker date="1560684451502" expanded="true" signature="2822:2827" ph="..." />
               </folding>
             </state>
           </provider>
@@ -95,6 +103,7 @@
       <find>title</find>
       <find>left+</find>
       <find>left+content</find>
+      <find>global</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,14 +125,18 @@
         <option value="$PROJECT_DIR$/Sougou/苹果.csv" />
         <option value="$PROJECT_DIR$/Sougou/SougouSearch_Spider.py" />
         <option value="$PROJECT_DIR$/Baidu/BaiduSearch_Spider.py" />
+        <option value="$PROJECT_DIR$/Lamabang/Lamabang.py" />
+        <option value="$PROJECT_DIR$/Baobaoshu/Baobaoshu.py" />
+        <option value="$PROJECT_DIR$/Sougou/SougouSearch_Function.py" />
+        <option value="$PROJECT_DIR$/Baidu/baiduSearch_Function.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="538" />
-    <option name="y" value="27" />
-    <option name="width" value="1329" />
-    <option name="height" value="1047" />
+    <option name="x" value="690" />
+    <option name="y" value="3" />
+    <option name="width" value="1307" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -131,6 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,17 +160,26 @@
             <path>
               <item name="crawlSearch" type="b2602c69:ProjectViewProjectNode" />
               <item name="crawlSearch" type="462c0819:PsiDirectoryNode" />
+              <item name="Baobaoshu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crawlSearch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crawlSearch" type="462c0819:PsiDirectoryNode" />
+              <item name="Lamabang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crawlSearch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crawlSearch" type="462c0819:PsiDirectoryNode" />
               <item name="Sougou" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FNIRS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -181,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.BaiduSearch_Spider (1)">
+  <component name="RunManager" selected="Python.baiduSearch_Function">
     <configuration name="BaiduSearch_Spider (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crawlSearch" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,7 +226,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="BaiduSearch_Spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Baobaoshu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crawlSearch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -211,11 +234,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jinghuaBaidu" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Baobaoshu" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\PythonProject\MachineLearning\MLProject\crawlSearch\Baidu\BaiduSearch_Spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Baobaoshu/Baobaoshu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -224,7 +247,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SougouSearch_Spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Lamabang" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="crawlSearch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lamabang" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lamabang/Lamabang.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SougouSearch_Function" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crawlSearch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -236,7 +280,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sougou/SougouSearch_Spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sougou/SougouSearch_Function.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,7 +289,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="crawl1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="baiduSearch_Function" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crawlSearch" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -253,32 +297,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Baidu" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\PythonProject\MachineLearning\MLProject\crawlSearch\Baidu\crawl1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="temp1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="crawlSearch" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jinghuaBaidu" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jinghuaBaidu/temp1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Baidu/baiduSearch_Function.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -288,19 +311,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.crawl1" />
-      <item itemvalue="Python.BaiduSearch_Spider" />
-      <item itemvalue="Python.temp1" />
       <item itemvalue="Python.BaiduSearch_Spider (1)" />
-      <item itemvalue="Python.SougouSearch_Spider" />
+      <item itemvalue="Python.baiduSearch_Function" />
+      <item itemvalue="Python.SougouSearch_Function" />
+      <item itemvalue="Python.Baobaoshu" />
+      <item itemvalue="Python.Lamabang" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.baiduSearch_Function" />
+        <item itemvalue="Python.SougouSearch_Function" />
+        <item itemvalue="Python.Lamabang" />
+        <item itemvalue="Python.Baobaoshu" />
         <item itemvalue="Python.BaiduSearch_Spider (1)" />
-        <item itemvalue="Python.SougouSearch_Spider" />
-        <item itemvalue="Python.BaiduSearch_Spider" />
-        <item itemvalue="Python.crawl1" />
-        <item itemvalue="Python.temp1" />
       </list>
     </recent_temporary>
   </component>
@@ -335,12 +358,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13336848" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1523458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32930845" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13043478" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26630434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -364,13 +387,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/save_url1.txt" />
-    <entry file="file://$PROJECT_DIR$/Baidu/crawl2_baiduVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jinghuaBaidu/Demo.py" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/bs4/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -384,13 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="1619" selection-start-line="1619" selection-end-line="1619" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Baidu/original_BaiduSearch_Spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -409,13 +418,6 @@
     <entry file="file://$PROJECT_DIR$/Baidu/品谷go.csv" />
     <entry file="file://$PROJECT_DIR$/Baidu/内部调试.csv" />
     <entry file="file://$PROJECT_DIR$/Sougou/skinII精华.csv" />
-    <entry file="file://$PROJECT_DIR$/Baidu/crawl1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="38" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/DailySoftware/DPML/Miniconda/Lib/site-packages/requests/sessions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -423,38 +425,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sougou/苹果.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sougou/原木纯品.csv">
+    <entry file="file://$PROJECT_DIR$/Sougou/苹果.csv" />
+    <entry file="file://$PROJECT_DIR$/Sougou/原木纯品.csv" />
+    <entry file="file://$PROJECT_DIR$/Baidu/华为.csv" />
+    <entry file="file://$PROJECT_DIR$/Baidu/save_url.txt" />
+    <entry file="file://$PROJECT_DIR$/Baidu/crawl1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="42">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sougou/华为.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Baidu/crawl2_baiduVideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Baidu/华为.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Baidu/original_BaiduSearch_Spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1118">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Baidu/认知.csv" />
+    <entry file="file://$PROJECT_DIR$/Sougou/华为.csv" />
+    <entry file="file://$PROJECT_DIR$/Baidu/机器学习.csv" />
+    <entry file="file://$PROJECT_DIR$/Baidu/小米.csv" />
+    <entry file="file://$PROJECT_DIR$/Sougou/小米.csv" />
     <entry file="file://$PROJECT_DIR$/Sougou/SougouSearch_Spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="69" />
+        <state relative-caret-position="520">
+          <caret line="156" column="20" lean-forward="true" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
           <folding>
             <element signature="e#21#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Baobaoshu/纸尿裤.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Baobaoshu/key_word.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Baobaoshu/奶粉.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2400" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lamabang/苹果.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/DailySoftware/DPML/Miniconda/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="893" column="33" lean-forward="true" selection-start-line="893" selection-start-column="33" selection-end-line="893" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Baidu/BaiduSearch_Spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="499">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding>
             <element signature="e#21#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Baidu/奶粉.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4851" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Baidu/三星.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Baobaoshu/Baobaoshu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="162" column="4" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+            <marker date="1560684451502" expanded="true" signature="1654:4971" ph="..." />
+            <marker date="1560684451502" expanded="true" signature="2822:2827" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sougou/SougouSearch_Function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Baidu/baiduSearch_Function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="141" column="43" lean-forward="true" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lamabang/Lamabang.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="85" column="23" lean-forward="true" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+          <folding>
+            <element signature="e#21#36#0" expanded="true" />
+            <marker date="1560683864644" expanded="true" signature="1158:2093" ph="..." />
           </folding>
         </state>
       </provider>

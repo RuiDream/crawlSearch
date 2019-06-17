@@ -129,7 +129,7 @@ class Get_Precise_Results():
 				if content[i * 4] != "None":
 					writeContent.writerow(content[i*4:i*4+4])
 					self.globalCount +=1
-				if self.globalCount == 21:
+				if self.globalCount == 20:
 					break
 		f.close()
 
